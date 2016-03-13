@@ -24,6 +24,7 @@ namespace SmartMoneyJobRunner
                 var estimation = CreateEstimation(stop);
                 _smartMoneyDbContext.Estimations.Add(estimation);
             }
+            _smartMoneyDbContext.SaveChanges();
         }
 
         private Estimation CreateEstimation(Stop stop)
