@@ -17,7 +17,8 @@ namespace SmartMoneyJobRunner
         {
             var nonEstimatedStops =
                 _smartMoneyDbContext.Stops.Where(
-                    stop => _smartMoneyDbContext.Transactions.Count(transaction => transaction.StopId == stop.Id) == 0)
+                    stop => _smartMoneyDbContext.Transactions.Count(transaction => transaction.StopId == stop.Id) == 0 &&
+                    _smartMoneyDbContext.Estimations.Count(estimation => estimation.StopId == stop.Id) == 0)
                     .ToList();
             foreach (var stop in nonEstimatedStops)
             {

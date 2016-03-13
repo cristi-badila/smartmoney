@@ -6,7 +6,7 @@ namespace SmartMoneyJobRunner.Models
     {
         public Guid StopId { get; set; }
         public decimal Amount { get; set; }
-        public Guid CategoryId { get; set; }
+        public Guid? CategoryId { get; set; }
         public Guid Id { get; set; }
         public Estimation()
         {

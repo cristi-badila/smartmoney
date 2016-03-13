@@ -12,12 +12,15 @@ namespace test.Controllers
         public IEnumerable<Estimation> Get(Guid userId)
         {
             var dbContext = new SmartMoneyDbContext();
-            var nonEstimatedStops =
+            var estimatedStops =
                 dbContext.Stops.Where(
-                    stop => dbContext.Transactions.Count(transaction => transaction.StopId == stop.Id) == 0 && stop.UserId == userId)
+                    stop => dbContext.Transactions.Count(transaction => transaction.StopId == stop.Id) == 0 
+                    && dbContext.Estimations.Count(estimation => estimation.StopId == stop.Id) > 0
+                    && stop.UserId == userId)
                     .ToList();
-            var similarStopIds = nonEstimatedStops.Select(similarStop => similarStop.Id).ToArray();
-            return dbContext.Estimations.Where(estimation => similarStopIds.Contains(estimation.StopId));
+            var stopIds = estimatedStops.Select(similarStop => similarStop.Id).ToArray();
+            var estimations = dbContext.Estimations.Where(estimation => stopIds.Contains(estimation.StopId)).ToList();
+            return estimations;
         }
     }
 }
