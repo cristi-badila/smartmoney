@@ -14,6 +14,9 @@ namespace SmartMoney.Models
                     "Mojo",
                     "Metro",
                     "Peny",
+                    "McDonalds",
+                    "Geea",
+                    "Irish Pub"
                 };
 
         public Guid StopId { get; set; }
@@ -25,7 +28,7 @@ namespace SmartMoney.Models
         {
             get
             {
-                return Locations.ElementAt(RandomLocationGenerator.Next(3));
+                return Locations.ElementAt(RandomLocationGenerator.Next(6));
             }
         }
     }
