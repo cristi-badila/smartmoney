@@ -6,6 +6,8 @@ namespace SmartMoney.Models
 {
     public class Estimation
     {
+        private static readonly Random RandomLocationGenerator = new Random();
+
         private static readonly List<string> Locations = new List<string>
                 {
                     "Bila",
@@ -23,8 +25,7 @@ namespace SmartMoney.Models
         {
             get
             {
-                var random = new Random();
-                return Locations.ElementAt(random.Next(3));
+                return Locations.ElementAt(RandomLocationGenerator.Next(3));
             }
         }
     }

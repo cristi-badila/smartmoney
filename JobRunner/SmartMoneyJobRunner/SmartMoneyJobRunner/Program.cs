@@ -15,10 +15,10 @@ namespace SmartMoneyJobRunner
 
         private static void RunJobs()
         {
-            Observable.Timer(DateTimeOffset.Now, TimeSpan.FromSeconds(2))
+            Observable.Timer(DateTimeOffset.Now, TimeSpan.FromSeconds(20))
                 .Do(timeStamp => new DetectPOI().Run())
                 .Subscribe();
-            Observable.Timer(DateTimeOffset.Now, TimeSpan.FromSeconds(2))
+            Observable.Timer(DateTimeOffset.Now, TimeSpan.FromSeconds(20))
                 .Do(timeStamp => new EstimateExpenses().Run())
                 .Subscribe();
         }

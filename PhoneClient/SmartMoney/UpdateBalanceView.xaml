@@ -33,12 +33,12 @@
                             <ColumnDefinition Width="100"/>
                             <ColumnDefinition Width="100"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock TextAlignment="Right" VerticalAlignment="Center" FontSize="15" Grid.Column="1" Text="{Binding Path=Location}"/>
+                        <TextBlock TextAlignment="Right" VerticalAlignment="Center" FontSize="15" Grid.Column="0" Text="{Binding Path=Location}"/>
                         <TextBlock TextAlignment="Right" VerticalAlignment="Center" FontSize="15" Grid.Column="1" Text="{Binding Path=Amount}"/>
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <Button Grid.Row="2" x:Name="SaveEstimations">Salveaza estimari</Button>
+        <Button Grid.Row="3" x:Name="SaveEstimations">Salveaza estimari</Button>
     </Grid>
 </UserControl>
