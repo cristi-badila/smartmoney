@@ -65,6 +65,7 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Estimation.cs" />
+    <Compile Include="Models\PointOfInterest.cs" />
     <Compile Include="Models\SmartMoneyDbContext.cs" />
     <Compile Include="Models\Stop.cs" />
     <Compile Include="Models\Transaction.cs" />
